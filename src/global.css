@@ -1,0 +1,69 @@
+*{
+    margin: 0;
+    padding: 0;
+    background-color: #000000;
+}
+div{
+    text-align: center;
+}
+.container{
+    height: 100vh;
+}
+button{
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: #302f2f;
+    color: #f7df08;
+    cursor: pointer;
+}
+button:hover{
+    color:#302f2f;
+    background-color:#f7df08;
+}
+h1, h2, p{
+    color: #f7df08;
+}
+.title{
+    padding: 15px;
+}
+.btn-open{
+    padding: 15px;
+    margin: 250px;
+}
+.btn-close{
+    position: relative;
+    left: 45%;
+    background-color: #000000;
+}
+form{
+    width: auto;
+    height: auto;
+    margin: 30px;
+    margin-top: 70px;
+}
+input{
+    width: 100%;
+    height: 40px;
+    font-size: 16px;
+    text-align: center;
+    border: none;
+    border-radius: 10px;
+    color: #f7df08;
+    background-color: #302f2f;
+    margin-bottom: 30px;
+}
+select{
+    width: 100%;
+    height: 40px;
+    border: none;
+    border-radius: 10px;
+    color: #f7df08;
+    background-color: #302f2f;
+    text-align: center;
+}
+.btn-save{
+    width: 50%;
+    height: 40px;
+    margin-top: 35px;
+}
