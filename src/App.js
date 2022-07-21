@@ -25,7 +25,7 @@ function App() {
     },
     content:{
       width: '40%',
-      height: '60%',
+      height: '65%',
       position: 'absolute',
       top: '10%',
       left: '30%',
