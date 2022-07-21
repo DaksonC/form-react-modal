@@ -1,3 +1,34 @@
+# POC do react-modal
+
+<div align="center">
+<img src="https://user-images.githubusercontent.com/81385265/180117046-2a89b992-4abc-463b-9f5c-cd247d9acaa5.png" />
+</div>
+
+<div align="center">
+<img src="https://user-images.githubusercontent.com/81385265/180117196-ba02418c-eea2-4640-b48b-c309160a5551.png" />
+</div>
+
+<div align="center">
+<img src="https://user-images.githubusercontent.com/81385265/180117269-38fa4afa-47b7-43df-9cc6-16e3f1c8ae5f.png" />
+</div>
+
+<div align="center">
+<img src="https://user-images.githubusercontent.com/81385265/180117366-de4b8be4-46ab-4bb3-a78c-9b57f295a0c5.png" />
+</div>
+
+<div align="center">
+<img src="https://user-images.githubusercontent.com/81385265/180117447-8a2af0d9-df14-4278-a411-18987c6ca8fa.png" />
+</div>
+
+<div align="center">
+<img src="https://user-images.githubusercontent.com/81385265/180117548-f0ec6917-0702-4ca3-9e14-6cd82440aae9.png" />
+</div>
+
+<div align="center">
+<img src="https://user-images.githubusercontent.com/81385265/180117621-c9ebb5f0-30c7-49a2-9241-9e913436bc76.png" />
+</div>
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
