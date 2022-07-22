@@ -1,13 +1,15 @@
 import Modal from 'react-modal'
 import { useState } from 'react'
+import { useForm } from "react-hook-form"
 import { Link } from 'react-router-dom'
 import '../../global.css'
 
 Modal.setAppElement ( '#root' )
 
 export function Home() {
+  const { register, handleSubmit } = useForm()
+  const onSubmit = data => console.log(data)
   const [modalIsOpen, setIsOpen] = useState(false)
-  const [formValue, setFormValue] = useState({})
   
   function handleOpenModal() {
     setIsOpen(true);
@@ -42,17 +44,7 @@ export function Home() {
       boxShadow: '1px 1px 1px rgba(0,0,0,0.1)'
     }
   }
-  function handleSubmit(e){
-   e.preventDefault()
-   const formData = new FormData(e.target)
-   const data = Object.fromEntries(formData)
-   console.log('deu bom!', data)
-  }
-  function handleChangeInput(e){
-    const { name, value } = e.target
-    setFormValue({...formValue, [name] : value})
-    console.log('Top!', formValue)
-  }
+  
 
   return (
     <div className='container'>
@@ -82,26 +74,16 @@ export function Home() {
         </button>
           <h2># form user</h2>
           <form
-            onSubmit={handleSubmit}
+            onSubmit={handleSubmit(onSubmit)}
           >
             <input 
-              type='text'
-              name='nome'
-              placeholder='Digite seu nome'
-              onChange={handleChangeInput}
-              value={formValue.name}
+              {...register('nome')}
             />
             <input 
-              type="text" 
-              name="email" 
-              placeholder='Digite seu email'
-              onChange={handleChangeInput}
-              value={formValue.email || ''}
+              {...register('email')}
             />
             <select
-              name="language"
-              onChange={handleChangeInput}
-              value={formValue.language || ''}
+              {...register('language')}
             >
               <option value="solidity">Solidity</option>
               <option value="javascript">Javascript</option>
