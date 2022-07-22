@@ -26,7 +26,7 @@ export function PageListUsers () {
             <div >
                 {users.map((users, key) => {
                     return(
-                        <div className='card' key={key}>
+                        <table className='card' key={key}>
                             <tbody>
                                 <tr>
                                     <td>
@@ -42,7 +42,7 @@ export function PageListUsers () {
                                     </td>
                                 </tr>
                             </tbody>
-                        </div>
+                        </table>
                     )
                 })}
             </div>

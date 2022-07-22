@@ -2,13 +2,24 @@ import Modal from 'react-modal'
 import { useState } from 'react'
 import { useForm } from "react-hook-form"
 import { Link } from 'react-router-dom'
+import { yupResolver } from '@hookform/resolvers/yup';
+import * as yup from "yup";
 import '../../global.css'
 
 Modal.setAppElement ( '#root' )
 
+const schema = yup.object({
+  nome: yup.string().required('* campo obrigatório!'),
+  email: yup.string().required('* campo obrigatório!'),
+  language: yup.string().required('* campo obrigatório!')
+}).required();
+
 export function Home() {
-  const { register, handleSubmit } = useForm()
+  const { register, handleSubmit,  formState:{ errors } } = useForm({
+    resolver: yupResolver(schema)
+  })
   const onSubmit = data => console.log(data)
+
   const [modalIsOpen, setIsOpen] = useState(false)
   
   function handleOpenModal() {
@@ -45,7 +56,6 @@ export function Home() {
     }
   }
   
-
   return (
     <div className='container'>
       <div className='title'>
@@ -54,46 +64,32 @@ export function Home() {
       <div className='lista-usuarios'>
         <Link to='/lista-usuarios'>List Users</Link>
       </div>
-
-     <button 
-      onClick={handleOpenModal}
-      className='btn-open'
-      >
-        # modal
-      </button> 
+     <button onClick={handleOpenModal} className='btn-open'># modal</button>
+     
      <Modal 
         isOpen={modalIsOpen}
         onRequestClose={handleCloseModal}
         style={customStyles}
-        >
-        <button 
-          onClick={handleCloseModal}
-          className='btn-close'
-          >
-            X
-        </button>
-          <h2># form user</h2>
-          <form
-            onSubmit={handleSubmit(onSubmit)}
-          >
-            <input 
-              {...register('nome')}
-            />
-            <input 
-              {...register('email')}
-            />
-            <select
-              {...register('language')}
-            >
-              <option value="solidity">Solidity</option>
-              <option value="javascript">Javascript</option>
-              <option value="java">Java</option>
-              <option value="python">Python</option>
-              <option value="c#">C#</option>
-            </select>
-            <button type="submit" className='btn-save'>Salvar</button>
-          </form>
+      >
+        <button onClick={handleCloseModal} className='btn-close'>X</button>
+        <h2># form user</h2>
+        <form onSubmit={handleSubmit(onSubmit)} >
+          <input {...register('nome')} />
+          <p>{errors.nome?.message}</p>
+          <input {...register('email')} />
+          <p>{errors.email?.message}</p>
+          <select {...register('language')} >
+            <p>{errors.language?.message}</p>
+            <option value="solidity">Solidity</option>
+            <option value="javascript">Javascript</option>
+            <option value="java">Java</option>
+            <option value="python">Python</option>
+            <option value="c#">C#</option>
+          </select>
+          <button type="submit" className='btn-save'>Salvar</button>
+        </form>
       </Modal>
+
     </div>
   );
 }
