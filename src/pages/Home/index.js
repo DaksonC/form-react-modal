@@ -60,7 +60,7 @@ export function Home() {
         <h1># aprendendo react-modal e manipulação de inputs</h1>
       </div>
       <div className='lista-usuarios'>
-        <Link to='/lista-usuarios'>Lista de Usuários</Link>
+        <Link to='/lista-usuarios'>List Users</Link>
       </div>
 
      <button 

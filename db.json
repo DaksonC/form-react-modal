@@ -1,0 +1,16 @@
+{
+  "users": [
+        {
+        "id": 1,
+        "nome": "Dakson Chaves",
+        "email": "daksonc@gmail.com",
+        "language": "Javascript"
+        },
+        {
+        "id": 2,
+        "nome": "João da Silva",
+        "email": "example@gmail.com",
+        "language": "Solidity"
+        }
+    ]
+}
