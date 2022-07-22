@@ -28,7 +28,7 @@ export function Home() {
       width: '40%',
       height: '65%',
       position: 'absolute',
-      top: '10%',
+      top: '15%',
       left: '30%',
       right: 'auto',
       bottom: 'auto',

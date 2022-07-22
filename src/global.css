@@ -23,6 +23,7 @@ button:hover{
 }
 h1, h2, p, a{
     color: #f7df08;
+    padding-bottom: 10px;
 }
 .title{
     padding: 15px;
