@@ -6,7 +6,7 @@ import './style.css'
 export function PageListUsers () {
     const [ users, setUsers ] = useState([])
 
-    // Get the users
+    // Recebendo os dados da api
     useEffect(() => {
         axios.get('http://localhost:3333/users')
         .then((response) => {

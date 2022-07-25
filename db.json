@@ -1,28 +1,46 @@
 {
   "users": [
-        {
-        "id": 1,
-        "nome": "Dakson Chaves",
-        "email": "daksonc@gmail.com",
-        "language": "Javascript"
-        },
-        {
-        "id": 2,
-        "nome": "João da Silva",
-        "email": "example@gmail.com",
-        "language": "Solidity"
-        },
-        {
-        "id": 3,
-        "nome": "Fulano de Tal",
-        "email": "example@gmail.com",
-        "language": "Python"
-        },
-        {
-        "id": 4,
-        "nome": "Beltrano de Souza",
-        "email": "example@gmail.com",
-        "language": "Java"
-        }
-    ]
+    {
+      "id": 1,
+      "nome": "Dakson Chaves",
+      "email": "daksonc@gmail.com",
+      "language": "Javascript"
+    },
+    {
+      "id": 2,
+      "nome": "João da Silva",
+      "email": "example@gmail.com",
+      "language": "Solidity"
+    },
+    {
+      "id": 3,
+      "nome": "Fulano de Tal",
+      "email": "example@gmail.com",
+      "language": "Python"
+    },
+    {
+      "id": 4,
+      "nome": "Beltrano de Souza",
+      "email": "example@gmail.com",
+      "language": "Java"
+    },
+    {
+      "nome": "Dakson Cruz",
+      "email": "daksonc@gmail.com",
+      "language": "c#",
+      "id": 5
+    },
+    {
+      "nome": "Dakson Cruz",
+      "email": "daksonc@gmail.com",
+      "language": "c#",
+      "id": 6
+    },
+    {
+      "nome": "Zé das Coves",
+      "email": "user1@exemplo.com",
+      "language": "java",
+      "id": 7
+    }
+  ]
 }

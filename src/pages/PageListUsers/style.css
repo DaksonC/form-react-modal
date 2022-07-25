@@ -3,6 +3,7 @@
     margin: 0px 10% 0px 10%;
 }
 .header{
+    position: fixed;
     border-bottom: 1px solid #eee8e842;
     padding-bottom: 10px;
 }

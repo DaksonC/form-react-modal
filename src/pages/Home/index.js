@@ -1,10 +1,11 @@
 import Modal from 'react-modal'
 import { useState } from 'react'
 import { useForm } from "react-hook-form"
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from "yup";
 import '../../global.css'
+import axios from 'axios';
 
 Modal.setAppElement ( '#root' )
 
@@ -15,10 +16,19 @@ const schema = yup.object({
 }).required();
 
 export function Home() {
+  const navigate = useNavigate()
   const { register, handleSubmit,  formState:{ errors } } = useForm({
     resolver: yupResolver(schema)
   })
-  const onSubmit = data => console.log(data)
+  //Enviando os dados para api
+  const onSubmit = data => axios.post('http://localhost:3333/users', data)
+  .then(() => {
+    console.log('Deu bom =)')
+    navigate('/lista-usuarios')
+  })
+  .catch(() => {
+    console.log('Deu ruim :(')
+  })
 
   const [modalIsOpen, setIsOpen] = useState(false)
   
@@ -39,7 +49,7 @@ export function Home() {
     },
     content:{
       width: '40%',
-      height: '65%',
+      height: '75%',
       position: 'absolute',
       top: '15%',
       left: '30%',
