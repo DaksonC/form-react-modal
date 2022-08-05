@@ -1,10 +1,13 @@
-import { useEffect, useState } from 'react'
+import React from 'react'
 import axios from 'axios'
+import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
+import { IUsers } from '../../interfaces'
 import './style.css'
 
+
 export function PageListUsers () {
-    const [ users, setUsers ] = useState([])
+    const [ users, setUsers ] = useState<IUsers[]>([])
 
     // Recebendo os dados da api
     useEffect(() => {
@@ -24,9 +27,9 @@ export function PageListUsers () {
                 <Link to='/'>Home</Link>
             </div>
             <div >
-                {users.map((users, key) => {
+                {users.map((users:IUsers) => {
                     return(
-                        <table className='card' key={key}>
+                        <table className='card' key={users.id}>
                             <tbody>
                                 <tr>
                                     <td>

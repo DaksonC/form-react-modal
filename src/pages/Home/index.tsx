@@ -1,11 +1,13 @@
-import Modal from 'react-modal'
+import Modal, { Styles } from 'react-modal'
 import { useState } from 'react'
 import { useForm } from "react-hook-form"
 import { Link, useNavigate } from 'react-router-dom'
-import { yupResolver } from '@hookform/resolvers/yup';
+import { yupResolver } from '@hookform/resolvers/yup'
+import { IUsers }  from '../../interfaces'
 import * as yup from "yup";
 import '../../global.css'
 import axios from 'axios';
+import React from 'react'
 
 Modal.setAppElement ( '#root' )
 
@@ -17,11 +19,11 @@ const schema = yup.object({
 
 export function Home() {
   const navigate = useNavigate()
-  const { register, handleSubmit,  formState:{ errors } } = useForm({
+  const { register, handleSubmit,  formState:{ errors } } = useForm<IUsers>({
     resolver: yupResolver(schema)
   })
   //Enviando os dados para api
-  const onSubmit = data => axios.post('http://localhost:3333/users', data)
+  const onSubmit = (data: IUsers) => axios.post('http://localhost:3333/users', data)
   .then(() => {
     console.log('Deu bom =)')
     navigate('/lista-usuarios')
@@ -38,7 +40,7 @@ export function Home() {
   function handleCloseModal() {
     setIsOpen(false);
   }
-  const customStyles = {
+  const customStyles: Styles = {
     overlay:{
       position: 'fixed',
       top: 0,

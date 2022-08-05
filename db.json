@@ -17,6 +17,12 @@
       "nome": "Zé da Coves",
       "email": "daksonc@gmail.com",
       "language": "c#"
+    },
+    {
+      "nome": "Dakson Cruz",
+      "email": "daksonc@gmail.com",
+      "language": "solidity",
+      "id": 5
     }
   ]
 }
